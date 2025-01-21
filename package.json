@@ -1,0 +1,21 @@
+{
+  "name": "push-notification-package",
+  "version": "1.0.0",
+  "description": "Push notificatioin package for web applications",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "push-notifications",
+    "web-push"
+  ],
+  "author": "John Adeoye",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "web-push": "^3.6.7"
+  }
+}
