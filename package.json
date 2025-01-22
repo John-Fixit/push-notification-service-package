@@ -11,9 +11,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js",
-      "browser": "./dist/index.umd.js"
+       "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
     },
     "./client": {
       "import": "./dist/index.esm.js",
@@ -21,6 +20,7 @@
       "browser": "./dist/client.umd.js"
     }
   },
+  "type": "commonjs",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
