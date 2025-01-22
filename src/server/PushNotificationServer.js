@@ -1,7 +1,6 @@
-const webPush = require("web-push");
-const express = require("express");
+import { webPush } from "web-push";
 
-class PushNotificationServer {
+export class PushNotificationServer {
   constructor(config) {
     this.publicKey = config.publicKey;
     this.privateKey = config.privateKey;
@@ -69,5 +68,3 @@ class PushNotificationServer {
     }
   }
 }
-
-module.exports = { PushNotificationServer };

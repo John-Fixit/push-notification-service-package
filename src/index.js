@@ -1,2 +1,2 @@
-export { PushNotificationClient } from "./client/PushNotificationClient";
-export { PushNotificationServer } from "./server/PushNotificationServer";
+export { PushNotificationClient } from "./client/PushNotificationClient.js";
+export { PushNotificationServer } from "./server/PushNotificationServer.js";
