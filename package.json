@@ -1,34 +1,44 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Push notificatioin package for web applications",
-  "main": "src/index.js",
+  "main": "dist/index.cjs.js",
+"module": "dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
-    }
+ "exports": {
+  ".": {
+    "import": "./src/index.js",
+    "require": "./src/index.js"
   },
+  "./client": {
+    "import": "./src/client/PushNotificationClient.js",
+    "require": "./src/client/PushNotificationClient.js"
+  },
+  "./server": {
+    "import": "./src/server/PushNotificationServer.js",
+    "require": "./src/server/PushNotificationServer.js"
+  }
+},
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "push-notification",
     "web-push",
     "notification",
-    "push-notification-service",
     "notification-service"
   ],
   "author": "John Adeoye",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "push-notification-service": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
