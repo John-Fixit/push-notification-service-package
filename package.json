@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Push notification package for web applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -50,6 +50,8 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "rollup": {
-    "external": ["web-push"]
+    "external": [
+      "web-push"
+    ]
   }
 }
