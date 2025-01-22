@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Push notification package for web applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,7 +11,7 @@
   },
   "exports": {
     ".": {
-       "require": "./dist/index.cjs.js",
+      "require": "./dist/index.cjs.js",
       "import": "./dist/index.esm.js"
     },
     "./client": {
