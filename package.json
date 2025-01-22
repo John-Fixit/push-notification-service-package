@@ -18,8 +18,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "push-notifications",
-    "web-push"
+    "push-notification",
+    "web-push",
+    "notification"
   ],
   "author": "John Adeoye",
   "license": "MIT",
