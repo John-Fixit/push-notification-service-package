@@ -1,11 +1,11 @@
 {
-  "name": "push-notification",
+  "name": "push-notification-service",
   "version": "1.0.0",
   "description": "Push notificatioin package for web applications",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/John-Fixit/push-notification-package.git"
+    "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
   "type": "module",
   "exports": {
@@ -20,7 +20,9 @@
   "keywords": [
     "push-notification",
     "web-push",
-    "notification"
+    "notification",
+    "push-notification-service",
+    "notification-service"
   ],
   "author": "John Adeoye",
   "license": "MIT",
