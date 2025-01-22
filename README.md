@@ -1,5 +1,5 @@
 
-# Push Notification Package
+# Push Notification Service
 
 A comprehensive push notification package that provides both client and server functionality, enabling web developers to integrate push notifications into their projects seamlessly.
 
@@ -16,17 +16,17 @@ A comprehensive push notification package that provides both client and server f
 ## Installation
 Install the package via npm:
 ```bash
-npm install push-notification
+npm install push-notification-service
 ```
 Or with Yarn:
 ```bash
-yarn add push-notification
+yarn add push-notification-service
 ```
 ## Server Usage
 The ```PushNotificationServer``` is used to handle push notification subscriptions and send notifications from your backend.
 ```javascript
 import express from "express";
-import { PushNotificationServer } from "push-notification";
+import { PushNotificationServer } from "push-notification-service";
 import cors from "cors";
 
 const app = express();
@@ -63,7 +63,7 @@ app.listen(8080, () => console.log("Server running on port 8080"));
 ## Client Usage
 The ```PushNotificationClient``` is used to initialize and send notifications from the frontend.
 ```javascript
-import { PushNotificationClient } from "push-notification";
+import { PushNotificationClient } from "push-notification-service";
 
 const pushClient = new PushNotificationClient({
   serverUrl: "http://localhost:8080", // Replace with your server URL
