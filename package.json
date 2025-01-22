@@ -9,20 +9,20 @@
     "type": "git",
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.js"
+  
+    "exports": {
+      ".": {
+        "import": "./dist/index.esm.js",
+        "require": "./dist/index.cjs.js",
+        "browser": "./dist/index.umd.js"
+      },
+      "./client": {
+        "import": "./dist/index.esm.js",
+        "require": "./dist/index.cjs.js",
+        "browser": "./dist/client.umd.js"
+      }
     },
-    "./client": {
-      "require": "./dist/client.cjs.js",
-      "import": "./dist/client.esm.js"
-    },
-    "./server": {
-      "require": "./dist/server.cjs.js",
-      "import": "./dist/server.esm.js"
-    }
-  },
+  
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
