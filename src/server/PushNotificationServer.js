@@ -1,4 +1,4 @@
-import { webPush } from "web-push";
+import webPush from "web-push";
 
 export class PushNotificationServer {
   constructor(config) {
