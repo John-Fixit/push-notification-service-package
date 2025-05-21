@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Push notification package for web applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -9,21 +9,21 @@
     "type": "git",
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
- "exports": {
-  ".": {
-    "require": "./dist/index.cjs.js",
-    "import": "./dist/index.esm.js"
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
+    },
+    "./client": {
+      "import": "./dist/client.esm.js",
+      "require": "./dist/client.cjs.js",
+      "browser": "./dist/client.umd.js"
+    },
+    "./server": {
+      "import": "./dist/server.esm.js",
+      "require": "./dist/server.cjs.js"
+    }
   },
-  "./client": {
-    "import": "./dist/client.esm.js",
-    "require": "./dist/client.cjs.js",
-    "browser": "./dist/client.umd.js"
-  },
-  "./server": {
-    "import": "./dist/server.esm.js",
-    "require": "./dist/server.cjs.js"
-  }
-},
   "type": "commonjs",
   "scripts": {
     "build": "rollup -c",
