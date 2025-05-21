@@ -43,8 +43,8 @@ app.use(
 );
 
 const pushServer = new PushNotificationServer({
-  // publicKey: "YOUR_PUBLIC_VAPID_KEY",
-  // privateKey: "YOUR_PRIVATE_VAPID_KEY",
+  publicKey: "YOUR_PUBLIC_VAPID_KEY", //only if available
+  privateKey: "YOUR_PRIVATE_VAPID_KEY", //only if available
   email: "your-email@example.com", // Used for VAPID authentication
 });
 
@@ -62,6 +62,8 @@ app.listen(8080, () => console.log("Server running on port 8080"));
 | `privateKey` | `string` | The private VAPID key for your push notifications. |
 | `email`      | `string` | A contact email for VAPID authentication.          |
 
+how to generate `publicKey and privateKey`, run `npm install web-push --save-dev && npx web-push generate-vapid-keys` in your project terminal
+
 ## Client Usage
 
 The `PushNotificationClient` is used to initialize and send notifications from the frontend.
@@ -71,7 +73,6 @@ import { PushNotificationClient } from "push-notification-service";
 
 const pushClient = new PushNotificationClient({
   serverUrl: "http://localhost:8080", // Replace with your backend server(Node.js) URL
-  publicVapidKey: "YOUR_PUBLIC_VAPID_KEY", // Replace with your VAPID public key
   userId: "unique-user-id", // Replace with the user's unique identifier(anything for your identifier)
 });
 
