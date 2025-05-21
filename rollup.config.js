@@ -14,20 +14,18 @@ export default [
         strict: true,
       },
       {
-        file: "dist/client.esm.js",
+        file: "dist/client.mjs", // changed from .esm.js to .mjs
         format: "es",
       },
       {
         file: "dist/client.umd.js",
         format: "umd",
         name: "PushNotificationClient",
-        globals: {
-          // No external dependencies for client
-        },
+        globals: {},
       },
     ],
     plugins: [
-      resolve({ browser: true }), // Target browser environment
+      resolve({ browser: true }),
       commonjs({
         transformMixedEsModules: true,
       }),
@@ -46,7 +44,7 @@ export default [
         strict: true,
       },
       {
-        file: "dist/server.esm.js",
+        file: "dist/server.mjs", // changed from .esm.js
         format: "es",
       },
     ],
@@ -57,10 +55,10 @@ export default [
       }),
       terser(),
     ],
-    external: ["express", "web-push"], // Mark server dependencies as external
+    external: ["express", "web-push"],
   },
 
-  // Full package (for Node.js)
+  // Full package (index)
   {
     input: "src/index.js",
     output: [
@@ -71,7 +69,7 @@ export default [
         strict: true,
       },
       {
-        file: "dist/index.esm.js",
+        file: "dist/index.mjs", // changed from .esm.js
         format: "es",
       },
     ],
@@ -82,6 +80,6 @@ export default [
       }),
       terser(),
     ],
-    external: ["express", "web-push"], // Mark server dependencies as external
+    external: ["express", "web-push"],
   },
 ];
