@@ -1,4 +1,5 @@
 import webPush from "web-push";
+import { defaultVapidKeys } from "../defaultVapidkeys";
 
 export class PushNotificationServer {
   constructor(config) {
@@ -7,16 +8,23 @@ export class PushNotificationServer {
     this.email = config.email;
     this.subscriptions = new Map();
 
+    // const vapidKeys = webPush.generateVAPIDKeys();
+
+    // console.log(vapidKeys);
+
     webPush.setVapidDetails(
-      `mailto:${this.email}`,
-      this.publicKey,
-      this.privateKey
+      `mailto:${this.email || "jfixcoding@gmail"}`,
+      this.publicKey || defaultVapidKeys.publlicKey,
+      this.privateKey || defaultVapidKeys.privateKey
     );
   }
 
   setupRoutes(app) {
     app.post("/save-subscription", this.saveSubscription.bind(this));
     app.post("/send-notification", this.sendNotification.bind(this));
+    app.get("/vapid-public-key", (req, res) => {
+      res.json({ publicKey: this.publicKey });
+    });
   }
 
   saveSubscription(req, res) {

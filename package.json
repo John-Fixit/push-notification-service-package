@@ -20,7 +20,7 @@
       "browser": "./dist/client.umd.js"
     }
   },
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,5 +1,6 @@
 // examples/server/index.js
 import express from "express";
+// import { PushNotificationServer } from "../../src/index.js";
 import { PushNotificationServer } from "push-notification-service";
 import cors from "cors";
 

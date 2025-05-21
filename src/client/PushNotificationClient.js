@@ -31,6 +31,12 @@ export class PushNotificationClient {
     }
 
     try {
+      // 👇 Lazy-load VAPID key from the server if not passed in constructor
+      if (!this.publicVapidKey) {
+        const res = await fetch(`${this.serverUrl}/vapid-public-key`);
+        const data = await res.json();
+        this.publicVapidKey = data.publicKey;
+      }
       const registration = await navigator.serviceWorker.register(this.swPath);
       await navigator.serviceWorker.ready;
 
