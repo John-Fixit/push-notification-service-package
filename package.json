@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Push notification package for web applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -37,8 +37,8 @@
     "express": "^4.21.2"
   },
   "dependencies": {
-  "web-push": "^3.6.7"
-},
+    "web-push": "^3.6.7"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
