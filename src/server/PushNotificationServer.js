@@ -14,7 +14,7 @@ export class PushNotificationServer {
 
     webPush.setVapidDetails(
       `mailto:${this.email || "jfixcoding@gmail"}`,
-      this.publicKey || defaultVapidKeys.publlicKey,
+      this.publicKey || defaultVapidKeys.publicKey,
       this.privateKey || defaultVapidKeys.privateKey
     );
   }
@@ -23,7 +23,7 @@ export class PushNotificationServer {
     app.post("/save-subscription", this.saveSubscription.bind(this));
     app.post("/send-notification", this.sendNotification.bind(this));
     app.get("/vapid-public-key", (req, res) => {
-      res.json({ publicKey: this.publicKey });
+      res.json({ publicKey: this.publicKey || defaultVapidKeys.publicKey });
     });
   }
 
