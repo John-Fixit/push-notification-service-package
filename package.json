@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Push notification package for web applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -10,22 +10,21 @@
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
   "exports": {
-  ".": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs.js"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js"
+    },
+    "./client": {
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.cjs.js",
+      "browser": "./dist/client.umd.js"
+    },
+    "./server": {
+      "import": "./dist/server.mjs",
+      "require": "./dist/server.cjs.js"
+    }
   },
-  "./client": {
-    "import": "./dist/client.mjs",
-    "require": "./dist/client.cjs.js",
-    "browser": "./dist/client.umd.js"
-  },
-  "./server": {
-    "import": "./dist/server.mjs",
-    "require": "./dist/server.cjs.js"
-  }
-}
-,
-"type": "module",
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
