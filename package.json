@@ -9,17 +9,21 @@
     "type": "git",
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.js"
-    },
-    "./client": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js",
-      "browser": "./dist/client.umd.js"
-    }
+ "exports": {
+  ".": {
+    "require": "./dist/index.cjs.js",
+    "import": "./dist/index.esm.js"
   },
+  "./client": {
+    "import": "./dist/client.esm.js",
+    "require": "./dist/client.cjs.js",
+    "browser": "./dist/client.umd.js"
+  },
+  "./server": {
+    "import": "./dist/server.esm.js",
+    "require": "./dist/server.cjs.js"
+  }
+},
   "type": "commonjs",
   "scripts": {
     "build": "rollup -c",
