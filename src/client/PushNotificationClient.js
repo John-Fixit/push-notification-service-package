@@ -56,6 +56,7 @@ export class PushNotificationClient {
       return subscription;
     } catch (error) {
       console.error(`Service Worker Registration failed: ${error.message}`);
+      return "There's an error";
     }
   }
 

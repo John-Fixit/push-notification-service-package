@@ -10,7 +10,7 @@ export class PushNotificationServer {
 
     // const vapidKeys = webPush.generateVAPIDKeys();
 
-    // console.log(vapidKeys);
+    console.log(this.subscriptions);
 
     webPush.setVapidDetails(
       `mailto:${this.email || "jfixcoding@gmail"}`,
@@ -31,6 +31,7 @@ export class PushNotificationServer {
     const { user, key } = req.body;
     const userAuth = key?.keys?.auth;
 
+    console.log(this.subscriptions, userAuth);
     if (!this.subscriptions.has(key.endpoint)) {
       this.subscriptions.set(key.endpoint, { userAuth, key });
     }
@@ -43,6 +44,7 @@ export class PushNotificationServer {
 
   async sendNotification(req, res) {
     const data = req.body;
+    console.log(this.subscriptions, data);
 
     if (this.subscriptions.size === 0) {
       return res.status(400).json({
