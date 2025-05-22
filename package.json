@@ -1,7 +1,7 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.24",
-  "description": "Push notification package for web applications",
+  "version": "1.0.25",
+  "description": "Push notification package for web applications using service worker",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -34,6 +34,7 @@
   },
   "keywords": [
     "push-notification",
+    "service-worker",
     "web-push",
     "notification",
     "notification-service"
