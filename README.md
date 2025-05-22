@@ -66,6 +66,30 @@ how to generate `publicKey and privateKey`, run `npm install web-push --save-dev
 
 ## Client Usage
 
+## 🛠 Service worker setup guide for client side
+
+After installing the package into your client side, you need the **service worker file `sw.js`** into your project's `public/` directory.
+
+**You can use our CLI to do this and will create the file in your public directory automatically:**
+
+```bash
+npx install-pns-sw "My Cool App"
+```
+
+**Manual Setup (Alternative to CLI)**
+If you prefer **not to use the CLI**, you can manually set up the service worker for push notifications.
+
+### 📁 Step 1: Get the Default Service Worker
+
+Open the default service worker template in the repository:  
+👉 [`template/sw.template.js`](https://github.com/John-Fixit/push-notification-service-package/blob/master/template/sw.template.js)
+
+---
+
+### 📂 Step 2: Copy It Into Your Project
+
+Copy the contents of `sw.template.js` and paste it into `sw.js` file ou created in your project’s `public/` directory:
+
 The `PushNotificationClient` is used to initialize and send notifications from the frontend.
 
 ```javascript
@@ -122,6 +146,7 @@ handleSendNotification();
 - A backend server running `PushNotificationServer` with VAPID keys.
 - A modern browser that supports the Push API.
 - HTTPS-enabled site (required for Push API in production).
+- Generate sw.js file through CLI or copy the template.
 
 ## Contributing
 
