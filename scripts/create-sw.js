@@ -26,6 +26,3 @@ const customizedTemplate = template.replace(/{{APP_NAME}}/g, appName);
 
 //Write the updated template back to sw.js
 fs.writeFileSync(outputPath, customizedTemplate, "utf-8");
-
-console.log(appName);
-console.log(outputPath);
