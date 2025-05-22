@@ -35,7 +35,6 @@ export class PushNotificationClient {
       if (!this.publicVapidKey) {
         const res = await fetch(`${this.serverUrl}/vapid-public-key`);
         const data = await res.json();
-        console.log(data);
         this.publicVapidKey = data.publicKey;
       }
       const registration = await navigator.serviceWorker.register(this.swPath);
@@ -57,7 +56,6 @@ export class PushNotificationClient {
       return subscription;
     } catch (error) {
       console.error(`Service Worker Registration failed: ${error.message}`);
-      return "There's an error";
     }
   }
 

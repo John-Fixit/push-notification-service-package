@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Push notification package for web applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -25,6 +25,9 @@
     }
   },
   "type": "module",
+  "bin": {
+    "create-sw": "./scripts/create-sw.js"
+  },
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
