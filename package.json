@@ -1,6 +1,6 @@
 {
   "name": "push-notification-service",
-  "version": "1.0.26",
+  "version": "1.0.25",
   "description": "Push notification package for web applications using service worker",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -10,6 +10,10 @@
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
   "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js"
+    },
     "./client": {
       "import": "./dist/client.mjs",
       "require": "./dist/client.cjs.js",

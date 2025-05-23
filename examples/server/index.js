@@ -1,9 +1,5 @@
 // examples/server/index.js
 import express from "express";
-// const express = require("express");
-// const { PushNotificationServer } = require("push-notification-service");
-// const cors = require("cors");
-// import { PushNotificationServer } from "../../src/index.js";
 import { PushNotificationServer } from "push-notification-service/server";
 import cors from "cors";
 
