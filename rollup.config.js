@@ -8,20 +8,19 @@ export default [
     input: "src/client.js",
     output: [
       {
-        file: "dist/client.cjs.js",
+        file: "dist/client.cjs",
+        preferConst: false,
         format: "cjs",
-        exports: "named",
-        strict: true,
+        exports: "auto", // Changed from "named" to "auto"
       },
       {
-        file: "dist/client.mjs", // changed from .esm.js to .mjs
+        file: "dist/client.mjs",
         format: "es",
       },
       {
         file: "dist/client.umd.js",
         format: "umd",
         name: "PushNotificationClient",
-        globals: {},
       },
     ],
     plugins: [
@@ -38,13 +37,14 @@ export default [
     input: "src/server.js",
     output: [
       {
-        file: "dist/server.cjs.js",
+        file: "dist/server.cjs",
+        preferConst: false,
         format: "cjs",
-        exports: "named",
-        strict: true,
+        exports: "auto", // Changed from "named" to "auto"
+        strict: false,
       },
       {
-        file: "dist/server.mjs", // changed from .esm.js
+        file: "dist/server.mjs",
         format: "es",
       },
     ],
@@ -57,17 +57,20 @@ export default [
     ],
     external: ["express", "web-push"],
   },
+
+  // Full package
   {
     input: "src/index.js",
     output: [
       {
-        file: "dist/index.cjs.js",
+        file: "dist/index.cjs",
+        preferConst: false,
         format: "cjs",
-        exports: "named",
-        strict: true,
+        exports: "auto", // Changed from "named" to "auto"
+        strict: false,
       },
       {
-        file: "dist/index.mjs", // changed from .esm.js
+        file: "dist/index.mjs",
         format: "es",
       },
     ],
@@ -81,4 +84,3 @@ export default [
     external: ["express", "web-push"],
   },
 ];
-// // Full package (index)
