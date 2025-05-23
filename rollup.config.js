@@ -58,28 +58,28 @@ export default [
     external: ["express", "web-push"],
   },
 
-  // Full package (index)
-  {
-    input: "src/index.js",
-    output: [
-      {
-        file: "dist/index.cjs.js",
-        format: "cjs",
-        exports: "named",
-        strict: true,
-      },
-      {
-        file: "dist/index.mjs", // changed from .esm.js
-        format: "es",
-      },
-    ],
-    plugins: [
-      resolve({ preferBuiltins: true }),
-      commonjs({
-        transformMixedEsModules: true,
-      }),
-      terser(),
-    ],
-    external: ["express", "web-push"],
-  },
+  // // Full package (index)
+  // {
+  //   input: "src/index.js",
+  //   output: [
+  //     {
+  //       file: "dist/index.cjs.js",
+  //       format: "cjs",
+  //       exports: "named",
+  //       strict: true,
+  //     },
+  //     {
+  //       file: "dist/index.mjs", // changed from .esm.js
+  //       format: "es",
+  //     },
+  //   ],
+  //   plugins: [
+  //     resolve({ preferBuiltins: true }),
+  //     commonjs({
+  //       transformMixedEsModules: true,
+  //     }),
+  //     terser(),
+  //   ],
+  //   external: ["express", "web-push"],
+  // },
 ];

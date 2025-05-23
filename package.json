@@ -10,10 +10,7 @@
     "url": "git+https://github.com/John-Fixit/push-notification-package.git"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs.js"
-    },
+   
     "./client": {
       "import": "./dist/client.mjs",
       "require": "./dist/client.cjs.js",

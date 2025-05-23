@@ -30,7 +30,7 @@ The `PushNotificationServer` is used to handle push notification subscriptions a
 
 ```javascript
 import express from "express";
-import { PushNotificationServer } from "push-notification-service";
+import { PushNotificationServer } from "push-notification-service/server";
 import cors from "cors";
 
 const app = express();
@@ -91,7 +91,7 @@ Copy the contents of `sw.template.js` and paste it into `sw.js` file you created
 The `PushNotificationClient` is used to initialize and send notifications from the frontend.
 
 ```javascript
-import { PushNotificationClient } from "push-notification-service";
+import { PushNotificationClient } from "push-notification-service/client";
 
 const pushClient = new PushNotificationClient({
   serverUrl: "http://localhost:8080", // Replace with your backend server(Node.js) URL
